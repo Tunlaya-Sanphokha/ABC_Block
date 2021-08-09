@@ -1,46 +1,37 @@
 class Board :
     def __init__(self):
-        self.board_array = [['A','B','C','D'],['F','E','G','H'],['I','K','J',' ']]
-        print(self.board_array)
+        self.board_game1 = [['C','D','B','A'],['F','J','H','I'],['E','G','K',' ']]
+        self.board_game2 = [['A','D','B','C'],['E',' ','H','G'],['K','I','F','J']]
+        self.board_game3 = [[' ','A','E','D'],['F','C','G','I'],['J','K','H','B']]
+        self.board_game4 = [['B','A','E','D'],['F','C','G','I'],['J','K','H',' ']]
+        
+        self.board_game = [['','','',''],['','','',''],['','','',' ']]
+        print(self.board_game)
 
-    def display_board(self,):
-        print()
-        for i in self.board_array:
-            for j in i:
-                print("|",end='')
-                print(j,end="")
-            print("|\n---------")
-        print()
-        self.add_position()
-    #def change_player(self):
+    def display_board(self,pos):
+        print(pos[0][0] + '|' + pos[0][1] + '|' + pos[0][2] + '|' + pos[0][3])
+        print('-------')
+        print(pos[1][0] + '|' + pos[1][1] + '|' + pos[1][2] + '|' + pos[1][3])
+        print('-------')
+        print(pos[2][0] + '|' + pos[2][1] + '|' + pos[2][2] + '|' + pos[2][3])
     
-    def select_character(self): 
-            
-           """ self.display_board()
-            for i,j in self.display_board ():
-                if i,j == ' ' 
+    def select_character(self,board_game,new_input): 
+        pass   
 
-
-            realInput = input("ใส่ตัวที่จะย้ายมาตำแหน่งนี้จร้า")
-
-            #x = int(realInput%3)
-            #y = int(realInput//3)
-            if self.board_array[y][x] != "X" and self.board_array[y][x] != "Y":
-                self.board_array[y][x] = self.player
-                return True
-            else :
-                print("Invalid Try Again")
-                return False
-                """
+    def check_winner(self,):
+        if self.board_game ==   [['A','B','C','D'],['E','F','G','H'],['I','J','K',' ']]:
+            print("ABC Block completed  You win")
+             
+       
    
 
 class InputProcessor:
     def add_input(self) :
-    position = input("which one do you want to switch ---> ")
-    return position
- 
+    pos = input("which one do you want to switch ---> ")
+    return pos
+    pass
 
-print("นนนี่มาทดสอบ commit จ้า")
+
     
 
 
