@@ -20,11 +20,11 @@ class Board :
 class InputProcessor:
     pass
 
-
+print("นนนี่มาทดสอบ commit จ้า")
     
 
 
 
-
+c
 board = Board()
 board.display_board()
