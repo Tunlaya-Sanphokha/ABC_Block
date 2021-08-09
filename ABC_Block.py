@@ -14,22 +14,31 @@ class Board :
         self.add_position()
     #def change_player(self):
     
+    def select_character(self): 
+            
+           """ self.display_board()
+            for i,j in self.display_board ():
+                if i,j == ' ' 
 
 
-    def add_position(self): 
             realInput = input("ใส่ตัวที่จะย้ายมาตำแหน่งนี้จร้า")
-            x = int(realInput%3)
-            y = int(realInput//3)
+
+            #x = int(realInput%3)
+            #y = int(realInput//3)
             if self.board_array[y][x] != "X" and self.board_array[y][x] != "Y":
                 self.board_array[y][x] = self.player
                 return True
             else :
                 print("Invalid Try Again")
                 return False
+                """
    
 
 class InputProcessor:
-    pass
+    def add_input(self) :
+    position = input("which one do you want to switch ---> ")
+    return position
+ 
 
 print("นนนี่มาทดสอบ commit จ้า")
     
