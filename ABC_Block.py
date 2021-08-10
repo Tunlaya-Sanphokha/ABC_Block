@@ -1,13 +1,11 @@
-
 class Board :
     def __init__(self):
         self.board_game1 = [['C','D','B','A'],['F','J','H','I'],['E','G','K',' ']]
-        self.board_game2 = [['A','D','B','C'],['E',' ','H','G'],['K','I','F','J']]
-        self.board_game3 = [[' ','A','E','D'],['F','C','G','I'],['J','K','H','B']]
-        self.board_game4 = [['B','A','E','D'],['F','C','G','I'],['J','K','H',' ']]
+        self.board_game2 = [['A','H','B','C'],['E','F','D','G'],['K','I','J',' ']]
+        self.board_game3 = [['H','F','E','D'],['A','C','G','I'],['J','K','B',' ']]
+        self.board_game4 = [['B','J','F','D'],['E','G','C','K'],['A','I','H',' ']]
         
         self.board_game = [['','','',''],['','','',''],['','','',' ']]
-
 
     def display_board(self,pos):
         print(pos[0][0] + '|' + pos[0][1] + '|' + pos[0][2] + '|' + pos[0][3])
@@ -34,24 +32,23 @@ class Board :
 
     
     def select_character(self,board_game,new_input): 
-        pass   
+        for i in range(3) :
+           for j in range(4) :
+               if board[i][j] == " " :
+                   self.blank_row = i
+                   self.blank_column = j
+        print(self.blank_row,self.blank_column)
+        pass  
 
     def check_winner(self,):
         if self.board_game ==   [['A','B','C','D'],['E','F','G','H'],['I','J','K',' ']]:
             print("ABC Block completed  You win")
              
-       
-   
-
 class InputProcessor:
     def add_input(self) :
         pos = input("select you want to switch :  ")
         return pos
     pass
-
-
-    
-
 
 board = Board()
 board.play_game()
