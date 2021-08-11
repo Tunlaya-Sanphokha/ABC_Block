@@ -1,6 +1,6 @@
 class Board :
     def __init__(self):
-        self.board_game1 = [['C','D','B','A'],['F','J','H','I'],['E','G','K',' ']]
+        self.board_game1 = [['A','B','C','D'],['E','F','G','H'],['I','J',' ','K']]
         self.board_game2 = [['A','H','B','C'],['E','F','D','G'],['K','I','J',' ']]
         self.board_game3 = [['H','F','E','D'],['A','C','G','I'],['J','K','B',' ']]
         self.board_game4 = [['B','J','F','D'],['E','G','C','K'],['A','I','H',' ']]
@@ -14,7 +14,7 @@ class Board :
         print('-------')
         print(pos[2][0] + '|' + pos[2][1] + '|' + pos[2][2] + '|' + pos[2][3])
 
-    def play_game(self) :
+    def play_game(self,) :
         chosse_board = int(input("you want to play borad 1 or 2 or 3 or 4: "))
         while self.gamerun == 1:
             if chosse_board == 1:
@@ -31,7 +31,9 @@ class Board :
                 self.display_board(self.board_game)
             new_position = InputProcessor.add_input(self)
             self.select_character(self.board_game,new_position)
+            self.display_board(self.board_game)
             self.check_winner()
+            break
         
     
     def select_character(self,board_game,new_input): 
@@ -52,7 +54,7 @@ class Board :
 
     def check_winner(self,):
         if self.board_game ==   [['A','B','C','D'],['E','F','G','H'],['I','J','K',' ']]:
-            print("ABC Block completed  You win")
+            print("---ABC Block Game completed, You win---")
              
 class InputProcessor:
     def add_input(self) :
